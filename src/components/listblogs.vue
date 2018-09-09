@@ -4,15 +4,13 @@
         <input type="text" v-model="search" placeholder="Search blogs">
         <div v-for="blog in filteredBlogs" class="single-blog">
           <h2 v-rainbow>{{blog.title | to-uppercase}}</h2>
-          <p>{{blog.body | snippet}}</p>
         </div>
     </div>
 </template>
 
 <script>
 // Imports
-import searchMixin from '../mixins/searchMixin';
-
+import searchMixin from "../mixins/searchMixin";
 export default {
   data() {
     return {
