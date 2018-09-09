@@ -2,6 +2,14 @@ import Vue from "vue";
 import App from "./App.vue";
 
 import VueResource from "vue-resource";
+//filters
+Vue.filter("to-uppercase", val => {
+  return val.toUpperCase();
+});
+
+Vue.filter("snippet", val => {
+  return val.slice(0, 100) + "...";
+});
 //Custome Directive
 Vue.directive("rainbow", {
   bind(el, binding, vnode) {
