@@ -1,7 +1,7 @@
 <template>
     <div id="single-blog">
         <h1>{{blogs.title}}</h1>
-        <article>{{blogs.body}}</article>
+        <article>{{blogs.content}}</article>
     </div>
 </template>
 <script>
@@ -14,10 +14,14 @@ export default {
   },
   created() {
     this.$http
-      .get("https://jsonplaceholder.typicode.com/posts/" + this.id)
+      .get(
+        "https://vue-playlist-25566.firebaseio.com/posts/" + this.id + ".json"
+      )
       .then(data => {
-        console.log(data);
-        this.blogs = data.body;
+        return data.json();
+      })
+      .then(data => {
+        this.blogs = data;
       });
   }
 };
