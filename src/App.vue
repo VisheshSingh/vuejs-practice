@@ -1,6 +1,7 @@
 <template>
     <div>
-        <router-view></router-view>
+      <app-header></app-header>
+      <router-view></router-view>
     </div>
 </template>
 
@@ -9,12 +10,14 @@
 import addBlog from "./components/addBlog.vue";
 import showBlog from "./components/showBlog.vue";
 import listblogs from "./components/listblogs.vue";
+import header from "./components/header.vue";
 
 export default {
   components: {
     "add-blog": addBlog,
     "show-blog": showBlog,
-    "list-blog": listblogs
+    "list-blog": listblogs,
+    "app-header": header
   },
   data() {
     return {};
