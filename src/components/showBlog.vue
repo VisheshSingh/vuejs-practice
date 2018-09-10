@@ -3,7 +3,7 @@
         <h1>All blog articles</h1>
         <input type="text" v-model="search" placeholder="Search blogs">
         <div v-for="blog in filteredBlogs" class="single-blog">
-          <h2 v-rainbow>{{blog.title | to-uppercase}}</h2>
+          <router-link v-bind:to="'blog/'+blog.id"><h2 v-rainbow>{{blog.title | to-uppercase}}</h2></router-link>
           <p>{{blog.body | snippet}}</p>
         </div>
     </div>
@@ -11,7 +11,7 @@
 
 <script>
 // Imports
-import searchMixin from '../mixins/searchMixin';
+import searchMixin from "../mixins/searchMixin";
 
 export default {
   data() {

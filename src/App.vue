@@ -11,7 +11,6 @@ import addBlog from "./components/addBlog.vue";
 import showBlog from "./components/showBlog.vue";
 import listblogs from "./components/listblogs.vue";
 import header from "./components/header.vue";
-
 export default {
   components: {
     "add-blog": addBlog,
