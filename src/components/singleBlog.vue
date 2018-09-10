@@ -1,7 +1,9 @@
 <template>
     <div id="single-blog">
-        <h1>{{blogs.title}}</h1>
-        <article>{{blogs.content}}</article>
+        <h1>{{blog.title}}</h1>
+        <article>{{blog.content}}</article>
+        <p>Author: {{blog.author}}</p>
+        <p v-for="category in blog.categories">Category: {{category}}</p>
     </div>
 </template>
 <script>
@@ -9,7 +11,7 @@ export default {
   data() {
     return {
       id: this.$route.params.id,
-      blogs: {}
+      blog: {}
     };
   },
   created() {
@@ -21,7 +23,7 @@ export default {
         return data.json();
       })
       .then(data => {
-        this.blogs = data;
+        this.blog = data;
       });
   }
 };
